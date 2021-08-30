@@ -1,6 +1,14 @@
 # Projeto da disciplina de Programação Web 2
 Propõe desenvolver uma aplicação PHP para que clientes possam comprar roupas disponibilizadas na loja online, enquanto vendedores possam cadastrar sua loja online relacionada, obrigatoriamente, à uma loja no Instagram
 
+## Instruções de Execução:
+Antes de começar, verifique se a sua máquina possui as seguintes ferramentas:
+- Git
+- PHP
+- Servidor Apache (ex.: Xampp, Wampp, Lampp)
+
+Com o ambiente configurado, baixe e importe o arquivo de [banco de dados](./lojas_instagram.sql) no seu gerenciador de banco de dados (ex.: phpMyAdmin).
+
 ## Requisitos do Sistema:
 - Utilizar a linguagem de programação PHP
 - Seguir o paradigma de Programação Orientada a Objetos (POO)
