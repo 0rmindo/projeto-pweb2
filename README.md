@@ -1,13 +1,20 @@
 # Projeto da disciplina de Programação Web 2
 Propõe desenvolver uma aplicação PHP para que clientes possam comprar roupas disponibilizadas na loja online, enquanto vendedores possam cadastrar sua loja online relacionada, obrigatoriamente, à uma loja no Instagram
 
-## Instruções de Execução:
+Para acessar o projeto em produção, [clique aqui](https://projeto-pweb2.herokuapp.com)
+
+- **Curiosidades técnicas:**  
+O site está hospedado no [Heroku](https://www.heroku.com/), com banco de dados no [Remote MySQL](https://remotemysql.com)
+
+## Instruções de Execução em Ambiente Local:
 Antes de começar, verifique se a sua máquina possui as seguintes ferramentas:
 - Git
 - PHP
 - Servidor Apache (ex.: Xampp, Wampp, Lampp)
 
-Com o ambiente configurado, baixe e importe o arquivo de [banco de dados](./lojas_instagram.sql) no seu gerenciador de banco de dados (ex.: phpMyAdmin).
+Com as ferramentas instaladas, faça um clone do repositório e inicie o servidor local
+
+Para simplificar a construção do banco de dados local, você pode baixar e importar o arquivo [lojas_instagram.sql](./lojas_instagram.sql) no seu gerenciador de banco de dados (ex.: phpMyAdmin)
 
 ## Requisitos do Sistema:
 - Utilizar a linguagem de programação PHP
