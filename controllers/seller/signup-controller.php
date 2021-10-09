@@ -1,7 +1,7 @@
 <?php
 
-require_once '../models/seller.php';
-require_once '../dao/sellerDao.php';
+require_once '../../models/seller.php';
+require_once '../../dao/seller-dao.php';
 
 $name = $_POST['name'];
 $email = $_POST['email'];
@@ -16,7 +16,7 @@ if ($sellerDao->get($seller) == null) {
   session_start();
   $_SESSION['userEmail'] = $seller->getEmail();
 
-  header('Location: ../views/homeSeller.php');
+  header('Location: ../../views/seller/home.php');
 } else {
   echo '
     <!DOCTYPE html>
@@ -32,9 +32,9 @@ if ($sellerDao->get($seller) == null) {
       <p>Já existe uma conta com o e-mail informado.</p>
       <p>
         Você pode
-        <a href="../views/loginSeller.php">Fazer login</a>
+        <a href="../../views/seller/login.php">Fazer login</a>
         , se você for o proprietário da conta, ou
-        <a href="../views/sellerSignup.php">Tentar novamente</a>
+        <a href="../../views/seller/signup.php">Tentar novamente</a>
         com um e-mail e/ou nome de usuário diferente.
       </p>
     </body>

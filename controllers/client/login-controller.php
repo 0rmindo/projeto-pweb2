@@ -1,7 +1,7 @@
 <?php
 
-require_once '../models/client.php';
-require_once '../dao/clientDao.php';
+require_once '../../models/client.php';
+require_once '../../dao/client-dao.php';
 
 $email = $_POST['email'];
 $password = md5($_POST['password']);
@@ -17,7 +17,7 @@ if ($clientIsInDatabase && $passwordIsCorrect) {
   session_start();
   $_SESSION['userEmail'] = $client->getEmail();
 
-  header('Location: ../views/homeClient.php');
+  header('Location: ../../views/client/home.php');
 } else {
   echo '
     <!DOCTYPE html>
@@ -31,7 +31,7 @@ if ($clientIsInDatabase && $passwordIsCorrect) {
     <body>
       <h1>Ops...</h1>
       <p>Seu e-mail e/ou senha estão incorretos.</p>
-      <a href="../views/loginClient.php">Tente novamente</a>.
+      <a href="../../views/client/login.php">Tente novamente</a>.
     </body>
     </html>
   ';

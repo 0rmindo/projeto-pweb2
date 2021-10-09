@@ -1,6 +1,6 @@
 <?php
-require_once '../models/client.php';
-require_once '../dao/clientDao.php';
+require_once '../../models/seller.php';
+require_once '../../dao/seller-dao.php';
 
 session_start();
 ?>
@@ -16,7 +16,7 @@ session_start();
 
 <body>
   <p>
-    <a href="../">Sair</a>
+    <a href="../../">Sair</a>
   </p>
   
   <h1>
@@ -24,11 +24,11 @@ session_start();
     
     <?php
       $email = $_SESSION['userEmail'];
-      $client = new Client($email);
-      $clientDao = new ClientDao();
+      $seller = new Seller($email);
+      $sellerDao = new SellerDao();
 
-      $clientName = $clientDao->get($client)[0]['name'];
-      echo $clientName.'!';
+      $sellerName = $sellerDao->get($seller)[0]['name'];
+      echo $sellerName.'!';
     ?>
   </h1>
 </body>

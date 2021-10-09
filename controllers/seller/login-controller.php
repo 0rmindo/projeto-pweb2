@@ -1,7 +1,7 @@
 <?php
 
-require_once '../models/seller.php';
-require_once '../dao/sellerDao.php';
+require_once '../../models/seller.php';
+require_once '../../dao/seller-dao.php';
 
 $email = $_POST['email'];
 $password = md5($_POST['password']);
@@ -17,7 +17,7 @@ if ($sellerIsInDatabase && $passwordIsCorrect) {
   session_start();
   $_SESSION['userEmail'] = $seller->getEmail();
 
-  header('Location: ../views/homeSeller.php');
+  header('Location: ../../views/seller/home.php');
 } else {
   echo '
     <!DOCTYPE html>
@@ -31,7 +31,7 @@ if ($sellerIsInDatabase && $passwordIsCorrect) {
     <body>
       <h1>Ops...</h1>
       <p>Seu e-mail e/ou senha estão incorretos.</p>
-      <a href="../views/loginSeller.php">Tente novamente</a>.
+      <a href="../../views/seller/login.php">Tente novamente</a>.
     </body>
     </html>
   ';

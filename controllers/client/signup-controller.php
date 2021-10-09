@@ -1,7 +1,7 @@
 <?php
 
-require_once '../models/client.php';
-require_once '../dao/clientDao.php';
+require_once '../../models/client.php';
+require_once '../../dao/client-dao.php';
 
 $name = $_POST['name'];
 $email = $_POST['email'];
@@ -16,7 +16,7 @@ if ($clientDao->get($client) == null) {
   session_start();
   $_SESSION['userEmail'] = $client->getEmail();
 
-  header('Location: ../views/homeClient.php');
+  header('Location: ../../views/client/home.php');
 } else {
   echo '
     <!DOCTYPE html>
@@ -32,9 +32,9 @@ if ($clientDao->get($client) == null) {
       <p>Já existe uma conta com o e-mail informado.</p>
       <p>
         Você pode
-        <a href="../views/loginClient.php">Fazer login</a>
+        <a href="../../views/client/login.php">Fazer login</a>
         , se você for o proprietário da conta, ou
-        <a href="../">Tentar novamente</a>
+        <a href="../../">Tentar novamente</a>
         com um e-mail e/ou nome de usuário diferente.
       </p>
     </body>

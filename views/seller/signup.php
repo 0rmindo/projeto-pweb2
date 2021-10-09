@@ -9,11 +9,11 @@
 
 <body>
   <p>
-    <a href="../">Voltar</a>
+    <a href="../../">Voltar</a>
   </p>
 
   <h1>Você precisa de uma conta de vendedor(a)</h1>
-  <form action="../controllers/sellerSignup.php" method="POST">
+  <form action="../../controllers/seller/signup-controller.php" method="POST">
     <label>
       Nome completo:<br>
       <input type="text" placeholder="Seu nome" name="name" required>
@@ -36,7 +36,7 @@
     <br>
     <br>
     <p>Já possui uma conta?
-      <a href="./loginSeller.php">Faça login</a>.
+      <a href="./login.php">Faça login</a>.
     </p>
   </form>
 </body>

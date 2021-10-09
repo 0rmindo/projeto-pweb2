@@ -9,11 +9,11 @@
 
 <body>
   <p>
-    <a href="../">Voltar</a>
+    <a href="../../">Voltar</a>
   </p>
 
-  <h1>Entrar</h1>
-  <form action="../controllers/loginClient.php" method="POST">
+  <h1>Entrar como vendedor(a)</h1>
+  <form action="../../controllers/seller/login-controller.php" method="POST">
     <label>
       E-mail:<br>
       <input type="email" placeholder="Seu e-mail" name="email">
@@ -27,11 +27,6 @@
     <br>
     <br>
     <button type="submit">Entrar</button>
-    <br>
-    <br>
-    <p>Ainda não possui uma conta?
-      <a href="../">Crie uma</a>.
-    </p>
   </form>
 </body>
 </html>

@@ -9,12 +9,12 @@
 
 <body>
   <p>
-  <a href="./views/sellerSignup.php">Criar loja</a> |
-    <a href="./views/loginSeller.php">Entrar como vendedor(a)</a>
+  <a href="./views/seller/signup.php">Criar loja</a> |
+    <a href="./views/seller/login.php">Entrar como vendedor(a)</a>
   </p>
 
   <h1>Criar conta</h1>
-  <form action="./controllers/clientSignup.php" method="POST">
+  <form action="./controllers/client/signup-controller.php" method="POST">
     <label>
       Nome completo:<br>
       <input type="text" placeholder="Seu nome" name="name" required>
@@ -37,7 +37,7 @@
     <br>
     <br>
     <p>Já possui uma conta?
-      <a href="./views/loginClient.php">Faça login</a>.
+      <a href="./views/client/login.php">Faça login</a>.
     </p>
   </form>
 </body>
