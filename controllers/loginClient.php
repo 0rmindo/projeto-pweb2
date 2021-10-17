@@ -1,5 +1,8 @@
 <?php
 
+header("Access-Control-Allow-Origin: *");
+header("Content-Type: application/json;charset=utf-8");
+
 require_once '../models/client.php';
 require_once '../dao/clientDao.php';
 
@@ -14,25 +17,14 @@ $clientIsInDatabase = $clientData != null;
 $passwordIsCorrect = $clientData[0]['password'] == $password;
 
 if ($clientIsInDatabase && $passwordIsCorrect) {
-  session_start();
-  $_SESSION['userEmail'] = $client->getEmail();
-
-  header('Location: ../views/homeClient.php');
+  echo json_encode(array(
+    'success' => true,
+    'user' => array(
+      'id' => $clientData[0]['id'],
+      'email' => $email,
+      'name' => $clientData[0]['name']
+    )
+  ));
 } else {
-  echo '
-    <!DOCTYPE html>
-    <html lang="pt-br">
-    <head>
-      <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Erro nos dados :(</title>
-    </head>
-    <body>
-      <h1>Ops...</h1>
-      <p>Seu e-mail e/ou senha estão incorretos.</p>
-      <a href="../views/loginClient.php">Tente novamente</a>.
-    </body>
-    </html>
-  ';
+  echo json_encode(array('success' => false));
 }
