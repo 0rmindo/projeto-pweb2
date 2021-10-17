@@ -1,5 +1,8 @@
 <?php
 
+header("Access-Control-Allow-Origin: *");
+header("Content-Type: application/json;charset=utf-8");
+
 require_once '../models/client.php';
 require_once '../dao/clientDao.php';
 
@@ -13,31 +16,16 @@ $clientDao = new ClientDao();
 if ($clientDao->get($client) == null) {
   $clientDao->create($client);
 
-  session_start();
-  $_SESSION['userEmail'] = $client->getEmail();
+  $response = array(
+    'success' => true,
+    'user' => array(
+      'email' => $email,
+      'name' => $name,
+    ),
+  );
 
-  header('Location: ../views/homeClient.php');
+  echo json_encode($response);
 } else {
-  echo '
-    <!DOCTYPE html>
-    <html lang="pt-br">
-    <head>
-      <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Criando conta...</title>
-    </head>
-    <body>
-      <h1>Ops...</h1>
-      <p>Já existe uma conta com o e-mail informado.</p>
-      <p>
-        Você pode
-        <a href="../views/loginClient.php">Fazer login</a>
-        , se você for o proprietário da conta, ou
-        <a href="../">Tentar novamente</a>
-        com um e-mail e/ou nome de usuário diferente.
-      </p>
-    </body>
-    </html>
-  ';
+  $response = array('success' => false);
+  echo json_encode($response);
 }

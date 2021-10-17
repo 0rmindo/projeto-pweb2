@@ -1,10 +1,3 @@
-<?php
-require_once '../models/client.php';
-require_once '../dao/clientDao.php';
-
-session_start();
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -19,17 +12,15 @@ session_start();
     <a href="../">Sair</a>
   </p>
   
-  <h1>
-    Olá,
-    
-    <?php
-      $email = $_SESSION['userEmail'];
-      $client = new Client($email);
-      $clientDao = new ClientDao();
+  <?php
 
-      $clientName = $clientDao->get($client)[0]['name'];
-      echo $clientName.'!';
-    ?>
-  </h1>
+    if (isset($_GET['name'])) {
+      echo '<h1>Olá, '.$_GET['name'].'!</h1>';
+    } else {
+      echo '<h1>Olá, tudo bem?</h1>';
+      echo '<p>Para criar uma conta, <a href="../">clique aqui</a>.</p>';
+    }
+
+  ?>
 </body>
 </html>

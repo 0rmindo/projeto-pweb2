@@ -5,8 +5,8 @@ class Connection {
 
   public static function getConnection() {
     if (!isset(self::$instance)) {
-      $databaseConfig = 'mysql:host=remotemysql.com;dbname=eEM6T9NDjS;charset=utf8';
-      self::$instance = new \PDO($databaseConfig, 'eEM6T9NDjS', 'CaADAEGH4H');
+      $databaseConfig = 'mysql:host=localhost;dbname=lojas_instagram;charset=utf8';
+      self::$instance = new \PDO($databaseConfig, 'root', '');
       // Estas informações são delicadas. Por favor, não utilize-as indevidamente :)
     }
     
