@@ -13,7 +13,7 @@
   </p>
 
   <h1>Entrar como vendedor(a)</h1>
-  <form action="../controllers/loginSeller.php" method="POST">
+  <form action="" method="POST" onsubmit="loginSeller(event)">
     <label>
       E-mail:<br>
       <input type="email" placeholder="Seu e-mail" name="email">
@@ -28,5 +28,8 @@
     <br>
     <button type="submit">Entrar</button>
   </form>
+
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="../scripts/loginSeller.js"></script>
 </body>
 </html>

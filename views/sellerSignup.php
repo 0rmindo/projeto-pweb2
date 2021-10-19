@@ -13,7 +13,7 @@
   </p>
 
   <h1>Você precisa de uma conta de vendedor(a)</h1>
-  <form action="../controllers/sellerSignup.php" method="POST">
+  <form action="" method="POST" onsubmit="createSeller(event)">
     <label>
       Nome completo:<br>
       <input type="text" placeholder="Seu nome" name="name" required>
@@ -39,5 +39,8 @@
       <a href="./loginSeller.php">Faça login</a>.
     </p>
   </form>
+
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="../scripts/createSeller.js"></script>
 </body>
 </html>

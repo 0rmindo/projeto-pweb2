@@ -13,7 +13,7 @@
   </p>
 
   <h1>Entrar</h1>
-  <form action="../controllers/loginClient.php" method="POST">
+  <form action="" method="POST" onsubmit="loginClient(event)">
     <label>
       E-mail:<br>
       <input type="email" placeholder="Seu e-mail" name="email">
@@ -33,5 +33,8 @@
       <a href="../">Crie uma</a>.
     </p>
   </form>
+
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="../scripts/loginClient.js"></script>
 </body>
 </html>
