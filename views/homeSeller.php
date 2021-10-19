@@ -19,17 +19,16 @@ session_start();
     <a href="../">Sair</a>
   </p>
   
-  <h1>
-    Olá,
+  <?php
     
-    <?php
-      $email = $_SESSION['userEmail'];
-      $seller = new Seller($email);
-      $sellerDao = new SellerDao();
+    if (isset($_GET['name'])) {
+      echo '<h1>Olá, '.$_GET['name'].'!</h1>';
+    } else {
+      echo '<h1>Olá, tudo bem?</h1>';
+      echo '<p>Para criar uma conta, <a href="../views/sellerSignup.php">clique aqui</a>.</p>';
+    }
 
-      $sellerName = $sellerDao->get($seller)[0]['name'];
-      echo $sellerName.'!';
-    ?>
+  ?>
   </h1>
 </body>
 </html>
