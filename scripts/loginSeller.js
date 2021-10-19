@@ -6,14 +6,14 @@ function loginSeller(event) {
   $.ajax({
     type: 'POST',
     dataType: 'json',
-    url: 'controllers/loginSeller.php',
+    url: '../controllers/loginSeller.php',
     async: true,
     data: dados,
     success: function(response) {
       if (response.success) {
-        window.location.replace(`views/homeSeller.php?name=${response.user.name}`);
+        window.location.replace(`../views/homeSeller.php?name=${response.user.name}`);
       } else {
-        alert('Desculpe, não foi possível realizar o login. Verifique seus dados e tente novamente.');
+        alert('E-mail e/ou senha estão incorretos.');
       }
     }
   });
